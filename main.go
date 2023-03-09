@@ -4,10 +4,17 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
+
+
 func main() {
+
+	os.Setenv("PORT", "8000")
+	os.Setenv("PLACE", "lagos")
+
 	m := http.NewServeMux()
 
 	m.HandleFunc("/", handlePage)
